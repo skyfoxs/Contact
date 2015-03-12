@@ -3,9 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Contact</title>
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	{{ 'Hello Contact' }}
+	<section id="contact-header" class="wrapper">
+		<div class="content">
+			<h1>Geeky Base</h1>
+			<p>Meet us at 2549/41-43 Phaholyothin Road, Lat Yao, Chatuchak, Bangkok.</p>
+		</div>
+	</section>
+	<section id="message" class="wrapper">
+		<div class="content">
+			<h2>Send us a message</h2>
+			<form>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" />
+				<label for="subject">Subject:</label>
+				<input type="text" id="subject" name="subject" />
+				<label for="message">Message:</label>
+				<textarea name="message" id="message" rows="5"></textarea>
+				<button>Send</button>
+			</form>
+		</div>
+	</section>
 	<script src="js/angular/angular.min.js"></script>
 	<script src="js/contact/module.js"></script>
 </body>

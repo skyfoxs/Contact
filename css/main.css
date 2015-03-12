@@ -1,0 +1,51 @@
+html{
+	background: #DEEAF1;
+}
+* {
+	font: 16px verdana;
+	color: #2c3e50;
+}
+.wrapper{
+	padding: 5px;
+}
+.content{
+	width: 600px;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+label{
+	display: block;
+}
+input, textarea{
+	width: calc(100% - 20px);
+	padding: 10px;
+	border: 1px solid #ACCADA;
+	margin: 5px 0 15px;
+}
+button{
+	padding: 10px 25px;
+	background: #2980b9;
+	border: 1px solid transparent;
+	color: white;
+	transition: linear 0.2s background;
+}
+button:hover{
+	background: #333;
+	cursor: pointer;
+}
+textarea:focus, input:focus, button:focus{
+    outline: 0;
+    border: 1px solid #106595;
+}
+button:focus{
+	background: #333;
+}
+
+h1,h2{ color: #106595; }
+h1{ font-size: 24px; }
+h2{ font-size: 20px; }
+
+#contact-header{
+	padding-top: 40px;
+}
