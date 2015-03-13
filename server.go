@@ -29,7 +29,6 @@ func responseContact(w http.ResponseWriter, c Contact) {
 	}
 
 	fmt.Fprint(w, `{"test": "success"}`)
-
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
@@ -40,6 +39,7 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 		var c Contact
 		json.NewDecoder(r.Body).Decode(&c)
 		responseContact(w, c)
+		r.Body.Close()
 	}
 }
 
