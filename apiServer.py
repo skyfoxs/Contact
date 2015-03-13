@@ -3,7 +3,7 @@
 Very simple HTTP server in python.
 
 Usage::
-    ./server.py [<port>]
+    ./apiServer.py [<port>]
 
 Send a GET request::
     curl http://localhost
