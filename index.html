@@ -19,15 +19,25 @@
 				<label for="email">Email:</label>
 				<input type="email" id="email" name="email"
 						ng-model="ctrl.contact.email"
+						spellcheck="false"
 						required/>
+				<span class="error" ng-show="contactForm.email.$dirty && contactForm.email.$invalid">
+					Please let us know your email address
+				</span>
 				<label for="subject">Subject:</label>
 				<input type="text" id="subject" name="subject"
 						ng-model="ctrl.contact.subject"
 						required/>
+				<span class="error" ng-show="contactForm.subject.$dirty && contactForm.subject.$invalid">
+					Please write a subject for your message
+				</span>
 				<label for="message">Message:</label>
 				<textarea name="message" id="message" rows="5"
 						ng-model="ctrl.contact.message"
 						required></textarea>
+				<span class="error" ng-show="contactForm.message.$dirty && contactForm.message.$invalid">
+					Please let us know your message
+				</span>
 				<button ng-disabled="contactForm.$invalid">Send</button>
 			</form>
 		</div>

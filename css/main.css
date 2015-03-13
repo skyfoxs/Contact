@@ -35,8 +35,8 @@ button:hover{
 	cursor: pointer;
 }
 textarea:focus, input:focus, button:focus{
-    outline: 0;
-    border: 1px solid #106595;
+	outline: 0;
+	border: 1px solid #106595;
 }
 button:focus{
 	background: #333;
@@ -44,6 +44,20 @@ button:focus{
 button:disabled{
 	cursor: not-allowed;
 	background: #95a5a6;
+}
+
+form .error{
+	color: #e74c3c;
+	display: block;
+	padding: 3px 0;
+	margin-bottom: 5px;
+	margin-top: -10px;
+}
+input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid{
+	border: 1px solid #e74c3c;
+}
+input.ng-dirty.ng-valid, textarea.ng-dirty.ng-valid{
+	border: 1px solid #27ae60;
 }
 
 h1,h2{ color: #106595; }
