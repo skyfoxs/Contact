@@ -1,9 +1,9 @@
 html{
 	background: #DEEAF1;
+	color: #2c3e50;
 }
 * {
 	font: 16px verdana;
-	color: #2c3e50;
 }
 .wrapper{
 	padding: 5px;
@@ -66,4 +66,16 @@ h2{ font-size: 20px; }
 
 #contact-header{
 	padding-top: 40px;
+}
+
+#loading{
+	background: rgba(0,0,0,0.8);
+	color: white;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 20%;
 }
