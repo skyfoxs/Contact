@@ -41,6 +41,10 @@ textarea:focus, input:focus, button:focus{
 button:focus{
 	background: #333;
 }
+button:disabled{
+	cursor: not-allowed;
+	background: #95a5a6;
+}
 
 h1,h2{ color: #106595; }
 h1{ font-size: 24px; }
