@@ -40,7 +40,7 @@ describe("Contact controller", function() {
             controller.initPage();
             expect(controller.overlay.isVisible()).toEqual(false);
         });
-    })
+    });
 
     describe("submit", function() {
         var promise;
