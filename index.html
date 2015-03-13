@@ -5,7 +5,7 @@
 	<title>Contact</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
-<body ng-controller="ContactController as ctrl" ng-init="ctrl.initForm()">
+<body ng-controller="ContactController as ctrl" ng-init="ctrl.initPage()">
 	<section id="contact-header" class="wrapper">
 		<div class="content">
 			<h1>Geeky Base</h1>
@@ -21,36 +21,36 @@
 						ng-model="ctrl.contact.email"
 						spellcheck="false"
 						required/>
-				<span class="error" ng-show="contactForm.email.$dirty && contactForm.email.$invalid">
+				<span class="error" ng-show="contactForm.email.$dirty && contactForm.email.$invalid" ng-cloak>
 					Please let us know your email address
 				</span>
 				<label for="subject">Subject:</label>
 				<input type="text" id="subject" name="subject"
 						ng-model="ctrl.contact.subject"
 						required/>
-				<span class="error" ng-show="contactForm.subject.$dirty && contactForm.subject.$invalid">
+				<span class="error" ng-show="contactForm.subject.$dirty && contactForm.subject.$invalid" ng-cloak>
 					Please write a subject for your message
 				</span>
 				<label for="message">Message:</label>
 				<textarea name="message" id="message" rows="5"
 						ng-model="ctrl.contact.message"
 						required></textarea>
-				<span class="error" ng-show="contactForm.message.$dirty && contactForm.message.$invalid">
+				<span class="error" ng-show="contactForm.message.$dirty && contactForm.message.$invalid" ng-cloak>
 					Please let us know your message
 				</span>
 				<button ng-disabled="contactForm.$invalid">Send</button>
 			</form>
 		</div>
 	</section>
-	<section id="loading" ng-if="false">
-		<div>Sending ...</div>
-		<div>
+	<section id="overlay" ng-if="ctrl.overlay.isVisible()" ng-cloak>
+		<div ng-show="ctrl.overlay.sending">Sending ...</div>
+		<div ng-show="ctrl.overlay.success">
 			<p>Your message has been sent successfully. Thank you.</p>
 			<button>ok</button>
 		</div>
-		<div>
+		<div ng-show="ctrl.overlay.error">
 			<p>Oops, something went wrong. Please try again later.</p>
-			<button>dismiss</button>
+			<button ng-click="ctrl.overlay.hide()">dismiss</button>
 		</div>
 	</section>
 	<script src="js/angular/angular.min.js"></script>
@@ -58,5 +58,6 @@
 	<script src="js/contact/contact_controller.js"></script>
 	<script src="js/contact/contact_service.js"></script>
 	<script src="js/contact/contact_factory.js"></script>
+	<script src="js/contact/overlay_factory.js"></script>
 </body>
 </html>
