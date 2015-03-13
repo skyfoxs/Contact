@@ -1,2 +1,5 @@
 node_modules/
 .DS_Store
+robot/*.html
+robot/*.xml
+robot/*.png

@@ -12,7 +12,7 @@
 			<p>Meet us at 2549/41-43 Phaholyothin Road, Lat Yao, Chatuchak, Bangkok.</p>
 		</div>
 	</section>
-	<section id="message" class="wrapper">
+	<section id="send-message" class="wrapper">
 		<div class="content">
 			<h2>Send us a message</h2>
 			<form name="contactForm" ng-submit="ctrl.addContact()" novalidate>
@@ -38,19 +38,19 @@
 				<span class="error" ng-show="contactForm.message.$dirty && contactForm.message.$invalid" ng-cloak>
 					Please let us know your message
 				</span>
-				<button ng-disabled="contactForm.$invalid">Send</button>
+				<button id="send-button" ng-disabled="contactForm.$invalid">Send</button>
 			</form>
 		</div>
 	</section>
 	<section id="overlay" ng-if="ctrl.overlay.isVisible()" ng-cloak>
 		<div ng-show="ctrl.overlay.sending">Sending ...</div>
 		<div ng-show="ctrl.overlay.success">
-			<p>Your message has been sent successfully. Thank you.</p>
-			<button ng-click="ctrl.overlay.hide()">ok</button>
+			<p id="success-message">Your message has been sent successfully. Thank you.</p>
+			<button id="success-button" ng-click="ctrl.overlay.hide()">ok</button>
 		</div>
 		<div ng-show="ctrl.overlay.error">
-			<p>Oops, something went wrong. Please try again later.</p>
-			<button ng-click="ctrl.overlay.hide()">dismiss</button>
+			<p id="error-message">Oops, something went wrong. Please try again later.</p>
+			<button id="error-button" ng-click="ctrl.overlay.hide()">dismiss</button>
 		</div>
 	</section>
 	<script src="js/angular/angular.min.js"></script>
