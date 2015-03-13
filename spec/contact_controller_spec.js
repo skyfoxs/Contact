@@ -1,5 +1,5 @@
 describe("Contact controller", function() {
-    var controller, $scope, ContactService, Contact, Overlay;
+    var controller, $scope, Contact, Overlay;
 
     beforeEach(function() {
         module("Contact");
@@ -9,13 +9,11 @@ describe("Contact controller", function() {
     function createController($rootScope, $controller, _ContactService_, _Contact_, _Overlay_) {
         var configs;
         $scope = $rootScope.$new();
-        ContactService = _ContactService_;
         Contact = _Contact_;
         Overlay = _Overlay_;
 
         configs = {
             $scope: $scope,
-            ContactService: ContactService,
             Contact: Contact,
             Overlay: Overlay
         };
@@ -55,13 +53,13 @@ describe("Contact controller", function() {
         });
 
         it("should call service add with correct data", function() {
-            spyOn(ContactService, "add").and.returnValue(promise);
+            spyOn(controller, "callAddContachService").and.returnValue(promise);
             controller.addContact();
-            expect(ContactService.add).toHaveBeenCalledWith(controller.contact.getAddJson());
+            expect(controller.callAddContachService).toHaveBeenCalledWith(controller.contact.getAddJson());
         });
 
         it("should call service with correct callback", function() {
-            spyOn(ContactService, "add").and.returnValue(promise);
+            spyOn(controller, "callAddContachService").and.returnValue(promise);
             spyOn(promise, "then");
             controller.addContact();
             expect(promise.then).toHaveBeenCalledWith(controller.addContactSuccess, controller.addContactError);
@@ -69,7 +67,6 @@ describe("Contact controller", function() {
 
         it("should call displaySending when addContact", function() {
             spyOn(controller.overlay, "displaySending");
-            spyOn(ContactService, "add").and.returnValue(promise);
             controller.addContact();
             expect(controller.overlay.displaySending).toHaveBeenCalled();
         });
