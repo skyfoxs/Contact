@@ -83,3 +83,9 @@ h2{ font-size: 20px; }
 	height: 100%;
 	padding-top: 20%;
 }
+#overlay button{
+	background: #277AB0;
+}
+#overlay button:hover, #overlay button:focus{
+	background: #3498db;
+}
