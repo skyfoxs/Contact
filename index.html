@@ -46,7 +46,7 @@
 		<div ng-show="ctrl.overlay.sending">Sending ...</div>
 		<div ng-show="ctrl.overlay.success">
 			<p>Your message has been sent successfully. Thank you.</p>
-			<button>ok</button>
+			<button ng-click="ctrl.overlay.hide()">ok</button>
 		</div>
 		<div ng-show="ctrl.overlay.error">
 			<p>Oops, something went wrong. Please try again later.</p>

@@ -11,6 +11,7 @@ angular.module("Contact").controller("ContactController", params);
 function ContactController($scope, ContactService, Contact, Overlay) {
     "use strict";
     var self = this;
+    this.scope = $scope;
 
     this.initPage = function() {
         this.initForm();
@@ -30,6 +31,7 @@ function ContactController($scope, ContactService, Contact, Overlay) {
     this.addContactSuccess = function() {
         self.initForm();
         self.overlay.displaySuccess();
+        self.scope.contactForm.$setPristine();
     };
 
     this.addContactError = function() {
