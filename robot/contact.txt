@@ -11,23 +11,38 @@ ${SUBJECT}          Test subject
 ${MESSAGE}          Test message
 
 *** Test Cases ***
-Send Success
-    Given Fill In Form With Success Data Test
-    Then Send Button Should Be Enabled
-    When Click Send Button
-    Then Page Display Send Message Success
-    When Click OK Button
-    Then Form Display With Blank Data
+Pop Kung would Like To Send Feedback With Invalid Email
+    Given He Fill Invalid Email With Valid Subject And Content
+    When He Submit Form Back
+    Then Feedback Form Should Not Be Delivered
 
-Send Fail
-    Given Fill In Form With Fail Data Test
-    Then Send Button Should Be Enabled
-    When Click Send Button
-    Then Page Display Send Message Fail
-    When Click Dismiss Button
-    Then Form Display With Fill In Data
+Pop Kung Would Like To Send Feedback with Valid Email
+    Given He Fill In All Valid Information In Feedback Form
+    When He Submit Form Back
+    Then Feedback Form Should Be Delivered To Whom It May Concern
 
 *** Keywords ***
+He Fill In All Valid Information In Feedback Form
+    Fill In Form With Success Data Test
+    Send Button Should Be Enabled
+
+He Fill Invalid Email With Valid Subject And Content
+    Fill In Form With Fail Data Test
+    Send Button Should Be Enabled
+
+He Submit Form Back
+    Click Send Button
+
+Feedback Form Should Be Delivered To Whom It May Concern
+    Page Display Send Message Success
+    Click OK Button
+    Form Display With Blank Data
+
+Feedback Form Should Not Be Delivered
+    Page Display Send Message Fail
+    Click Dismiss Button
+    Form Display With Fill In Data
+
 Open Contact Page
     Open Browser    url=${URL}    browser=gc
     Set Window Size    1280    800
