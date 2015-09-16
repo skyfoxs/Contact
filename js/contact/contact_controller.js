@@ -24,8 +24,12 @@ function ContactController($scope, ContactService, Contact, Overlay) {
 
     this.addContact = function() {
         this.overlay.displaySending();
-        ContactService.add(self.contact.getAddJson())
+        self.callAddContachService(self.contact.getAddJson())
             .then(self.addContactSuccess, self.addContactError);
+    };
+
+    this.callAddContachService = function(data) {
+        return ContactService.add(data);
     };
 
     this.addContactSuccess = function() {
